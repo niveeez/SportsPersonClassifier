@@ -25,7 +25,7 @@ def classify_image(image_base64_data, file_path=None):
         
         result.append({
             'class': class_number_to_name(__model.predict(final)[0]),
-            'class probability': np.round(__model.predict_proba(final) * 100,2).tolist()[0],
+            'class_probability': np.round(__model.predict_proba(final) * 100,2).tolist()[0],
             'class_dictionary': __class_name_to_number
         })
         #result.append(class_number_to_name(__model.predict(final)[0]))
@@ -90,11 +90,12 @@ if __name__ == '__main__':
     load_saved_artifacts()
     #print(classify_image(get_b64_test_image_for_virat(), None))
     #print(class_number_to_name(2))
-    print(classify_image(None, './test_images/federer1.jpg'))
+    """print(classify_image(None, './test_images/federer1.jpg'))
     print(classify_image(None, './test_images/federer2.jpg'))
     print(classify_image(None, './test_images/serena1.jpg'))
     print(classify_image(None, './test_images/serena2.jpg'))
     print(classify_image(None, './test_images/sharapova1.jpg'))
     print(classify_image(None, './test_images/virat1.jpg'))
     print(classify_image(None, './test_images/virat2.jpg'))
-    print(classify_image(None, './test_images/virat3.jpg'))
+    print(classify_image(None, './test_images/virat3.jpg'))"""
+    print(classify_image(None, './test_images/serena1.jpg'))
